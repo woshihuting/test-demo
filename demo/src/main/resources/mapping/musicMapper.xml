@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.MusicMapper">
+
+    <select id="selectByPrimaryKey" resultType="com.example.demo.pojo.Music">
+
+      select id , music_name musicName,music_url musicUrl,is_delete isDelete  from music
+
+      where id = #{Id}
+
+    </select>
+
+    <insert id="insert" parameterType="com.example.demo.pojo.Music">
+     insert into music(music_name,music_url,is_delete)
+     values (#{musicName},#{musicUrl},#{isDelete})
+    </insert>
+
+</mapper>
